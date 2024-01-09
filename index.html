@@ -43,6 +43,9 @@
         .project-item {
             margin-bottom: 15px;
         }
+        .page {
+            display: none;
+        }
     </style>
 </head>
 
@@ -54,26 +57,31 @@
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About Me</a>
-        <a href="#">Professional Experience</a>
-        <a href="#">Skills</a>
-        <a href="#">Education</a>
-        <a href="#">Achievements</a>
-        <a href="#">Certifications</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#experience">Professional Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <div class="content">
-        <section id="about">
+        <div id="home" class="page">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore the sections below to learn more about my journey and expertise.</p>
+        </div>
+
+        <section id="about" class="page">
             <h2 class="section-heading">About Me</h2>
             <p>I am a Data Scientist with a passion for diving deeper into the data world. Experienced in developing
                 machine learning and NLP projects. Canadian permanent resident, eligible to work full time in any part
                 of Canada.</p>
         </section>
 
-        <section id="experience">
+        <section id="experience" class="page">
             <h2 class="section-heading">Professional Experience</h2>
             <article>
                 <h3>Maternity Break (Jan 2023-Present)</h3>
@@ -85,51 +93,24 @@
             <!-- Add similar articles for Postdoctoral Researcher and Data Scientist roles -->
         </section>
 
-        <section id="skills">
-            <h2 class="section-heading">Skills</h2>
-            <p>Python (NumPy, Pandas, Scikit-learn, Flask), Tools & Technologies (Jupyter Notebook, Git), Databases (SQL,
-                NoSQL (MongoDB)), Visualization (Seaborn, Plotly, Matplotlib, Power BI, Tableau), Deployment
-                (Familiarity with software deployment processes, CI/CD pipelines, AWS)</p>
-        </section>
+        <!-- Add similar sections for Skills, Education, Achievements, Certifications, Projects, and Contact -->
 
-        <section id="education">
-            <h2 class="section-heading">Education</h2>
-            <!-- Add details for Ph.D., Visiting Researcher, Master’s, and Bachelor’s -->
-        </section>
-
-        <section id="achievements">
-            <h2 class="section-heading">Achievements</h2>
-            <ul>
-                <li>Awarded Commonwealth Scholarship by the UK Government during Ph.D.</li>
-                <li>Among top 3 university toppers during master’s.</li>
-                <li>Consistently exceeded project goals, contributing to successful data-driven strategies.</li>
-                <li>Actively contributed to cross-functional teams, fostering a collaborative work environment.</li>
-            </ul>
-        </section>
-
-        <section id="certifications">
-            <h2 class="section-heading">Certifications</h2>
-            <ul>
-                <li>Machine Learning with Python: Foundations - LinkedIn</li>
-                <li>Google Certifications - Foundations: Data, Data, Everywhere - Coursera</li>
-                <!-- Add other certifications -->
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2 class="section-heading">Projects</h2>
-            <div class="project-item">
-                <h3>Image Classification</h3>
-                <p>Brief description of the project, your role, technologies used, and outcomes.</p>
-            </div>
-            <!-- Add other project items as needed -->
-        </section>
-
-        <section id="contact">
-            <h2 class="section-heading">Contact</h2>
-            <p>Email: manmeetroorkee@gmail.com | Phone: (437) 986-8901</p>
-        </section>
     </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+            }
+        }
+
+        // Show home page by default
+        showPage('home');
+    </script>
 </body>
 
 </html>
